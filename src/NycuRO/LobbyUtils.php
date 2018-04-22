@@ -92,6 +92,7 @@ class LobbyUtils extends PluginBase {
                 API::getMessageAPI()->sendTitleTransfer($sender);
                 if (API::getMechanicAPI()->isTransferEnabled() == true) {
                     $sender->transfer($this->ip, $this->port);
+		    $this->getServer()->broadcastMessage("§b$sender §atransfered to the hub!");
                 }
                 break;
             case "glist":
